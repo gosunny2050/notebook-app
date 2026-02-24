@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>想法记录本 - 测试页面</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        .success {
+            color: green;
+            font-weight: bold;
+        }
+        .error {
+            color: red;
+            font-weight: bold;
+        }
+        .test-section {
+            margin: 20px 0;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>想法记录本 - 功能测试</h1>
+    
+    <div class="test-section">
+        <h2>基本功能测试</h2>
+        <p>1. 检查localStorage支持: <span id="test-storage">测试中...</span></p>
+        <p>2. 检查JavaScript执行: <span id="test-js">测试中...</span></p>
+        <p>3. 检查CSS加载: <span id="test-css">测试中...</span></p>
+    </div>
+    
+    <div class="test-section">
+        <h2>应用链接</h2>
+        <p><a href="index.html">👉 点击这里打开想法记录本应用</a></p>
+    </div>
+    
+    <div class="test-section">
+        <h2>使用说明</h2>
+        <ol>
+            <li>点击上面的链接打开应用</li>
+            <li>在"添加新想法"区域填写你的想法</li>
+            <li>点击"保存想法"按钮保存</li>
+            <li>在"我的想法记录"区域查看所有想法</li>
+            <li>使用搜索框或标签过滤器查找特定想法</li>
+        </ol>
+    </div>
+    
+    <script>
+        // 测试localStorage
+        try {
+            localStorage.setItem('test', 'test');
+            localStorage.removeItem('test');
+            document.getElementById('test-storage').innerHTML = '<span class="success">✓ 支持</span>';
+        } catch (e) {
+            document.getElementById('test-storage').innerHTML = '<span class="error">✗ 不支持: ' + e.message + '</span>';
+        }
+        
+        // 测试JavaScript
+        document.getElementById('test-js').innerHTML = '<span class="success">✓ 正常</span>';
+        
+        // 测试CSS
+        if (document.styleSheets.length > 0) {
+            document.getElementById('test-css').innerHTML = '<span class="success">✓ 已加载</span>';
+        } else {
+            document.getElementById('test-css').innerHTML = '<span class="error">✗ 未加载</span>';
+        }
+    </script>
+</body>
+</html>
