@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>一键创建GitHub仓库</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .step {
+            margin: 25px 0;
+            padding: 20px;
+            border-left: 4px solid #667eea;
+            background: #f8fafc;
+            border-radius: 8px;
+        }
+        .step-number {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 30px;
+            margin-right: 10px;
+            font-weight: bold;
+        }
+        .button {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            margin: 10px 5px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+        .code {
+            background: #2d3748;
+            color: #e2e8f0;
+            padding: 15px;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            margin: 15px 0;
+            overflow-x: auto;
+        }
+        .success {
+            color: #48bb78;
+            font-weight: bold;
+        }
+        .warning {
+            color: #ed8936;
+            font-weight: bold;
+        }
+        .link-button {
+            text-align: center;
+            margin: 30px 0;
+        }
+        .auto-section {
+            background: #e6fffa;
+            border: 2px dashed #38b2ac;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 30px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🚀 想法记录本 - GitHub仓库一键创建</h1>
+        
+        <div class="auto-section">
+            <h2>🎯 最简方案：点击一次 + 复制一次</h2>
+            <p>只需要做这两步，剩下的我帮你完成：</p>
+        </div>
+        
+        <div class="step">
+            <div class="step-number">1</div>
+            <h3>点击创建仓库</h3>
+            <p>点击下面的按钮，会在新标签页打开GitHub仓库创建页面，所有信息已预填：</p>
+            <div class="link-button">
+                <a href="https://github.com/new?name=notebook-app&description=一个简单易用的想法记录Web应用&visibility=public" 
+                   target="_blank" class="button">
+                    📦 点击创建GitHub仓库
+                </a>
+            </div>
+            <p class="warning">注意：创建时<strong>不要</strong>初始化README、.gitignore、许可证</p>
+        </div>
+        
+        <div class="step">
+            <div class="step-number">2</div>
+            <h3>复制仓库URL</h3>
+            <p>仓库创建后，复制SSH地址（会自动显示在页面上）：</p>
+            <div class="code">git@github.com:gosunny2050/notebook-app.git</div>
+            <p>然后告诉我"已创建"，我会立即推送代码。</p>
+        </div>
+        
+        <div class="step">
+            <div class="step-number">3</div>
+            <h3>我自动推送代码</h3>
+            <p>你告诉我"已创建"后，我运行：</p>
+            <div class="code">cd /home/notebook-app && git push -u origin main</div>
+            <p>代码会在30秒内推送到GitHub。</p>
+        </div>
+        
+        <div class="step">
+            <div class="step-number">4</div>
+            <h3>你启用GitHub Pages</h3>
+            <p>代码推送后，你需要：</p>
+            <ol>
+                <li>访问：<code>https://github.com/gosunny2050/notebook-app/settings/pages</code></li>
+                <li>设置 Source: <strong>Deploy from a branch</strong></li>
+                <li>Branch: <strong>main</strong>, Folder: <strong>/ (root)</strong></li>
+                <li>点击 <strong>Save</strong></li>
+            </ol>
+            <p>等待1-2分钟，然后访问：</p>
+            <div class="code">https://gosunny2050.github.io/notebook-app/</div>
+        </div>
+        
+        <div class="auto-section">
+            <h2>⏱️ 时间估算</h2>
+            <ul>
+                <li>你操作：点击 + 复制 = <strong>1分钟</strong></li>
+                <li>我操作：推送代码 = <strong>30秒</strong></li>
+                <li>你操作：启用Pages = <strong>1分钟</strong></li>
+                <li>部署等待：<strong>2分钟</strong></li>
+                <li><strong>总计：约5分钟</strong></li>
+            </ul>
+        </div>
+        
+        <div class="step">
+            <h3>📞 需要帮助？</h3>
+            <p>如果遇到问题：</p>
+            <ol>
+                <li>截图错误信息</li>
+                <li>告诉我执行到哪一步</li>
+                <li>我会提供具体解决方案</li>
+            </ol>
+        </div>
+        
+        <div style="text-align: center; margin-top: 40px; padding-top: 20px; border-top: 2px solid #e2e8f0;">
+            <p>现在点击上面的按钮开始吧！ 🚀</p>
+            <p>创建后告诉我"已创建"，我立即推送代码。</p>
+        </div>
+    </div>
+    
+    <script>
+        // 自动滚动到顶部
+        window.scrollTo(0, 0);
+        
+        // 添加点击跟踪
+        document.querySelectorAll('.button').forEach(button => {
+            button.addEventListener('click', function() {
+                console.log('用户点击了创建仓库按钮');
+            });
+        });
+    </script>
+</body>
+</html>
