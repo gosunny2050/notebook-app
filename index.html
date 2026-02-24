@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>想法记录本</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-book"></i> 想法记录本</h1>
+            <p class="subtitle">随时记录你的灵感，随时查看你的想法</p>
+        </header>
+
+        <div class="main-content">
+            <div class="add-note-section">
+                <h2><i class="fas fa-plus-circle"></i> 添加新想法</h2>
+                <div class="input-group">
+                    <label for="note-title">标题：</label>
+                    <input type="text" id="note-title" placeholder="给想法起个标题...">
+                </div>
+                <div class="input-group">
+                    <label for="note-content">内容：</label>
+                    <textarea id="note-content" placeholder="写下你的想法..."></textarea>
+                </div>
+                <div class="input-group">
+                    <label for="note-tags">标签（用逗号分隔）：</label>
+                    <input type="text" id="note-tags" placeholder="例如：工作, 创意, 学习">
+                </div>
+                <button id="add-note-btn" class="btn-primary">
+                    <i class="fas fa-save"></i> 保存想法
+                </button>
+            </div>
+
+            <div class="notes-section">
+                <div class="section-header">
+                    <h2><i class="fas fa-list"></i> 我的想法记录</h2>
+                    <div class="filter-controls">
+                        <input type="text" id="search-notes" placeholder="搜索想法...">
+                        <select id="filter-tags">
+                            <option value="">所有标签</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div id="notes-container">
+                    <!-- 想法记录会动态显示在这里 -->
+                    <div class="empty-state">
+                        <i class="fas fa-lightbulb"></i>
+                        <p>还没有任何想法记录</p>
+                        <p>开始记录你的第一个灵感吧！</p>
+                    </div>
+                </div>
+                
+                <div class="stats">
+                    <p>共 <span id="total-notes">0</span> 条记录</p>
+                    <button id="clear-all-btn" class="btn-secondary">
+                        <i class="fas fa-trash"></i> 清空所有记录
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>© 2024 想法记录本 | 随时记录，随时查看</p>
+        </footer>
+    </div>
+
+    <!-- 确认删除对话框 -->
+    <div id="delete-modal" class="modal">
+        <div class="modal-content">
+            <h3><i class="fas fa-exclamation-triangle"></i> 确认删除</h3>
+            <p>确定要删除这条想法记录吗？此操作不可撤销。</p>
+            <div class="modal-buttons">
+                <button id="confirm-delete-btn" class="btn-danger">删除</button>
+                <button id="cancel-delete-btn" class="btn-secondary">取消</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
