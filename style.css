@@ -28,12 +28,38 @@ header {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
+.header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.theme-toggle {
+    background: rgba(255, 255, 255, 0.2);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.theme-toggle:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: rotate(30deg);
+}
+
 header h1 {
     font-size: 2.8rem;
     margin-bottom: 10px;
     display: flex;
     align-items: center;
-    justify-content: center;
     gap: 15px;
 }
 
@@ -239,6 +265,19 @@ header h1 {
     justify-content: flex-end;
 }
 
+.edit-btn {
+    background: none;
+    border: none;
+    color: #4299e1;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: color 0.3s;
+}
+
+.edit-btn:hover {
+    color: #3182ce;
+}
+
 .delete-btn {
     background: none;
     border: none;
@@ -276,6 +315,11 @@ header h1 {
     margin-top: 30px;
     padding-top: 20px;
     border-top: 2px solid #e2e8f0;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 10px;
 }
 
 #total-notes {
@@ -368,4 +412,98 @@ footer {
         gap: 15px;
         text-align: center;
     }
+}
+
+/* 暗色模式 */
+body.dark-mode {
+    background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
+    color: #e2e8f0;
+}
+
+body.dark-mode header {
+    background: linear-gradient(135deg, #4a5568 0%, #2d3748 100%);
+}
+
+body.dark-mode .add-note-section,
+body.dark-mode .notes-section {
+    background: #2d3748;
+    color: #e2e8f0;
+}
+
+body.dark-mode .input-group label {
+    color: #cbd5e0;
+}
+
+body.dark-mode .input-group input,
+body.dark-mode .input-group textarea,
+body.dark-mode #search-notes,
+body.dark-mode #filter-tags {
+    background: #4a5568;
+    border-color: #718096;
+    color: #e2e8f0;
+}
+
+body.dark-mode .input-group input:focus,
+body.dark-mode .input-group textarea:focus,
+body.dark-mode #search-notes:focus,
+body.dark-mode #filter-tags:focus {
+    border-color: #667eea;
+}
+
+body.dark-mode .btn-secondary {
+    background: #4a5568;
+    color: #e2e8f0;
+}
+
+body.dark-mode .btn-secondary:hover {
+    background: #718096;
+}
+
+body.dark-mode .note-card {
+    background: #4a5568;
+    border-left-color: #667eea;
+}
+
+body.dark-mode .note-title {
+    color: #e2e8f0;
+}
+
+body.dark-mode .note-content {
+    color: #cbd5e0;
+}
+
+body.dark-mode .tag {
+    background: #718096;
+    color: #e2e8f0;
+}
+
+body.dark-mode .stats {
+    border-top-color: #4a5568;
+}
+
+body.dark-mode .action-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+body.dark-mode .theme-toggle {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+body.dark-mode .theme-toggle:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+body.dark-mode .empty-state {
+    color: #a0aec0;
+}
+
+body.dark-mode .modal-content {
+    background: #2d3748;
+    color: #e2e8f0;
+}
+
+body.dark-mode .modal-content h3 {
+    color: #e2e8f0;
 }
